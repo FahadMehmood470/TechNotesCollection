@@ -1,0 +1,167 @@
+Q 1:What is Linux and how it is different from other?
+Ans:Linux is open source operating system so you can modify it but windows ,Mac os it is closed source and we cannot modify it
+
+Q 2:What is distributions of Linux ?
+Ans:Ubuntu:it is like Macos so new user can use it,it provide long term support 
+     fedora:it is light software if we want to run redhat. it is better for latest features and technology
+     red hat enterprise:
+     mint Linux:It works like windows and should be use by new comers.
+     
+Q 3:What is the purpose of the terminal in Linux, and why is it important?
+Ans :ctrl +alt+t
+
+Q 4. What is the purpose of the terminal in Linux, and why is it important?
+Ans :it is used to access the cli of an OS.
+
+Q 5. What is the difference between a command-line interface (CLI) and a graphical user interface (GUI)?
+Ans:command line interface is to intract with OS through commands while while gui is graphical representation like buttons
+icons etc . cli is much faster than gui.
+
+Q 6. How do you check which version of Linux you are running?
+Ans:lsb_release -a
+
+Q 7. What is the root user, and how is it different from a regular user?
+Ans:root is like Super User and has all privilles and there is some command which can only executes by root user;
+
+Q 8. What are the default directories in the Linux filesystem (e.g., `/home`, `/etc`, `/bin`) and what are they used for?
+Ans:	\    :path
+	\home:home directories 
+	\etc:configration files how operating system or application behave 
+	\bin:executible files but code are in binary or machine code 
+	\exe:executable files and code is in high lavel language.
+	
+Q 9. How do you list files and directories in the current directory?
+Ans:             \ls
+
+Q 10. How do you create a new directory in Linux?
+Ans: mkdir <directory name>
+
+Q 11. What command do you use to change the current working directory?
+Ans: cd :This command will change the current working directory
+
+Q 12. How do you create an empty file in Linux?
+Ans:touch <file name> :it will create empty file in linux
+
+Q 13. How do you delete a file or directory?
+Ans:rm <file name>  //to remove file
+    rmdir <directory name>  //to remove a directory
+
+Q 14. What is the difference between relative and absolute paths?
+Ans:	absolute paths:tell us about current file to root directory
+	relative paths: tell us about about the path of current directory
+
+Q 15. How do you copy files and directories from one location to another?
+Ans:cp <path to source file> <path to 
+
+Q 16. How do you move files and directories in Linux?
+Ans: mv file directory
+     to move all file in directory to another directory: sudo mv  FolderA * FolderB
+
+Q 17. How do you rename a file in Linux?
+Ans: mv oldname newname 
+
+Q 18. How can you check the permissions of a file or directory?
+Ans: find / perm 777 : only read permissions
+     find / perm 700 : only 
+     find / perm 600 :read and write permission
+
+Q 19. What do the letters `r`, `w`, and `x` mean in file permissions?
+Ans:   r => read only  =>    For All Users
+       w => write only =>    For Owner 
+       x => execute    =>    For group
+
+Q 20. How do you change the permissions of a file or directory using the `chmod` command?
+Ans: chmod 644 <filename>
+	=>first digit is for owner 
+	=>second is for gorup user 
+	=>other everyone else
+
+Q 21. How do you change the owner of a file or directory?
+Ans: chown <user name > <file or directory name>
+
+Q 22. What is the difference between `sudo` and `su` commands?
+Ans:The main difference between is sudo use the password of current account And su use password of target account
+
+Q 23. How do you display the contents of a text file in the terminal?
+Ans:cat <file name>
+
+Q 24. How do you edit a text file using a command-line text editor like `nano` or `vim`?
+Ans:Step-1:nono <txt file>
+    Step-2:enter text as you want after you complete you editing
+    Step-3:press ctrl + x
+    Step-4:Press y
+    Step-5:Press Enter
+
+Q 25. How do you search for specific text within a file using the `grep` command?
+Ans:grep <word> <file name>
+
+Q 26. How do you count the number of lines, words, or characters in a file?
+Ans:wc -w <file name>    =>this will give no of words in file
+    wc -c<file name>	 =>this will give no of binary bits 
+ 
+Q 28. How do you list all running processes in Linux?
+Ans:ps -aux | less
+	
+Q 29. How do you find the process ID (PID) of a running process?
+Ans : ps aux | grep <prna	ocess name>
+
+Q 30. How do you kill a process using its PID?
+Ans: kill <pid>
+
+Q 31. What is the purpose of the `top` command, and how do you use it to monitor system performance?
+Ans:display real time information about running processes	
+
+Q 32. How do you check the amount of free and used memory in your system?
+Ans: free
+
+Q 33. How do you install a new software package in Linux?
+Ans : sudo apt-get install <package name>
+
+Q 34. How do you update all installed packages to their latest versions?
+Ans : sudo apt update
+
+Q 35. How do you remove a package that is no longer needed?
+Ans:sudo apt remove <package name>
+
+Q 36. How do you search for a package in your Linux distribution's repositories?
+Ans:apt-cache search <any package name>
+
+Q 37. How do you check the IP address of your machine in Linux?
+Ans:ifconfig
+
+Q 38. How do you test if a remote server is reachable using the ping command?
+Ans :ping <Server ip host name>
+
+Q 39. How do you check which ports are open and listening on your system?
+Ans:netstat
+
+Q 40. How do you download a file from the internet using the terminal?
+Ans: wget <link you want to download>
+
+Q 41. How do you create a new user account in Linux?
+Ans: sudo adduser <user name>
+
+Q 42. How do you delete a user account?
+Ans sudo deluser --remove-home <user name>
+	or
+    sudo deluser <username>
+    sudo rm -rf /home/<username>
+
+Q 43. How do you change the password of an existing user?
+Ans:sudo passwd <user name>
+
+Q 44. how do you add a user to a group ubuntu terminal?
+Ans: sudo addgroup <group name>  =>to create a group
+     usermod -aG sudo newuser
+
+
+Q 45. What is the `/etc/passwd` file, and what information does it store?
+Ans:it contains username, realname identification inforemation and basic account information 
+
+Q 46. What is a shell, and what are some common types of shells available in Linux?
+Ans:shell is a tool which is used to interact with kernel. some of shell are bash,fish,cshell,kshell,zshell
+
+	
+
+			
+

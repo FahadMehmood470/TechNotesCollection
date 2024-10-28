@@ -1,0 +1,151 @@
+ Give priviliges to any user
+ create user <user name>		=>it will create user and ability to login
+ create role <user name>		=>it will create a role or it is set of permissions that can be assigned to user
+ 						roles cannot login
+ \du					=>list of roles
+ drop role <role name >			=>delete role 
+ drop user <user name >			=>delete user 
+ select current_user;			=>it will show current user who you are login with
+ select current_database;		=>it will show current database
+ alter user <user name >		=>it will give privilleges or assign a role to be superuser
+ with superuser;	
+ alter user <user name>	nosuperuser	=>it will remove the privilige of superuser
+ alter user <user name> with		=>it will give permission to new user to login
+ with login	
+ alter user <user name>			=>it will assign given password to user
+ with password "<pass>"
+ alter user <database name> <user 	=>it will connect to database as database name and user as user name 
+ name>		
+ psql -U postges			=>we can login using postgres actually database contain same name like postgress
+ 							by default so we cannot login with <new user>
+alter user <user name > with login,	=>it will give error because only one privilige is allowed at a time
+create db;
+create database <database but 		=>it will create database same as user and now you can login only by command				
+same as you give user name>				psql -U <new user>			
+ 
+ 
+ 
+ psql -U postgres -W       		 =>Command to enter in postgres console
+ create database <database name > 	 =>Command to create new database	
+ \l , \list                       	 =>Command to list all the databases
+\c <Database Name>         		 =>Change To Database
+Ctrl + l      		   		 =>Clear Screen
+\q  			    		=>Close console
+drop database <database name>		=>To Delete the database 
+create table company(id int ,Name 	=>Create a table company
+text,age int,adress char(50),salary real); 	
+\d					=>to show all the table in given database
+\d <table name>				=>to show all about the given table
+drop table <table name>			=>to delete table from database
+delete from <table name>		=>this command will delete all the data from given table and also trigger the trigger
+
+trancate table <table name>		=>this will also deltete rows but does not trigger the trigger
+insert into <table name > values	=>To add data in table 
+<according to given parameters>
+insert 0 1				=>after data  inserted 0 how many rows is effected and 1 for how many rows is added
+select * from <table name> ;		=>Show data in given table
+add more than one row values at a 	=>yes
+time
+alter table <table name > add 		=>it will create a new column in current table 
+<column name> <datatype> ;	
+alter table <table name > drop		=>it will delete column which we give name to it 
+<column name > ;
+PostgreSQL Arithmetic Operators
+%					=>For Mode between two numbers
+|/					=>For square root
+||/					=>For cube root
+select * from <table name> where 	=>To show only selected column
+<column name>=<value>	
+select (val1+val2) as <any name>	=>perform addition function
+select count() as <any name> from	=>count number of rows in given table  
+<table name >
+select current_timestamp;		=>builtin function to get current date and time
+And Operator 				=>both condition should true
+select * from <table name> where	=>i use id and age as an example
+id>2 & age>20;
+Not operator 				=>it will change The Whole function means if answer is 1 then not  give answer 0
+select * from <table name> where 	=>it will print all the column name from table except id =2 
+id !=2;
+or operator				=>any condition can be true
+select * from table where id>2 or age	=>it will check  conditions if any condition is true it will print data if any  	
+=22;						condtion is wrong it will print empty row 
+like 					=>it will print like for strings i means character
+select * from <table name > where 	=>it will check if name like Fa exist in table It Will print that column .
+name like "Fa%"	
+select * from <table name > where 	=>i have use age as a column and it will print all the values in column 2 is in
+age::text like '2%0'				starting and 0 is on the end
+BETWEEN					=>it will list down values between two any type values
+select * from <table name> where	=>it will print all the column between id =2 till id =5
+id between 2 and 5
+Update 					=>it will update values inside the column 
+update <table name > set age=34 
+where id =4;
+update <table name> set age=23		=>it will update the age column where name like fahad is found
+where name like 'fahad%'
+delete 					=>it will delete the experission according to condition 
+delete <table name > where 		=>it will delete the column where id is 2d
+id =2
+Limit					=>to print data from table but how much limit will decides
+select * from <table name> limit 4	=>it will print 4 rows in given table.
+offset 					=>it will print the rows but after the given val
+select * from <table name> limit 2	=>it will print next two rows in given table but not first rows because of offset 
+offset 2;
+order by				=>it will print data in ascending and descending form
+select * from <table name> order by 	=>Here i print all data from table but the column which i given will be printed
+<column name> asc;				in ascending.
+Group by				=>you can use this to group two rows having same values
+select <column name> from <table 	=>this will print given column with no repeatation
+name> group by <column name>
+select distinct <row name> from 	=>this will also print column with no repeated 
+<table name>
+having  				=>this is used to filter the result 	
+alias					=>change table name temprary 
+select * from <table name > as a	=>it will change table name to a temprary 
+join					=>it will be only apply between  if data type is same column name can be different
+inner join				=>this will print common data between given table 
+select * from <table name > as a	=>this will print common data between these column
+inner join <table name >as b on a.<
+column name>and b.<column name>;	
+left outer join				=>it will print column a values but will print only matching values of b
+select * from <table name > as a	=>it will print 
+left outer join <table name>as b
+as a.age=a.id;		
+union 					=>to combine data from the result of two or more
+trigger
+index					=>use to retrive data speed up it can increase performance actually it create hash map
+						and memory know where actually column is it optimize performence
+create index i on <table name>		=>it will create index on given column
+<column name>
+view					=>it is temprary table and does not stored in database it is used to be subset of
+								of real table
+create view <view_name> as <column 	=>it will create a subset view of table having all column you given to that view 
+name1,column name2....)from <table
+name>
+drop table <view name >			=>it will cause error because view is not table it is only view or subset or temp
+							table 
+drop view <view name>			=>it will delete view
+Transactions				=>it can revert our entire querry like in bank if want to withdaw my money and if i 
+					    enter a money to withdraw it will be cut from my account but if there is cause 
+					    any error then how can we revert that like how to add my money back to account
+					    by transaction and whole querry will be reverted and given balance will be 
+					    reflected in your account
+begin;select * from <table name>	=>it will only delete a row temprary not perment
+were <column name> =20;rollback	;		
+begin;select * from <table name>	=>it will check if all transaction is complete then it will delete that row 
+where <column name > =20;commit;
+ 
+Lock					=>it is useful to when more than one update in that row is done if will esure that 
+						if one transaction can update that value in column it will lock that row and 
+						when transaction complete and value is updated then lock will be open and 
+						another transaction will be done
+auto increment				=>it means that auto incremnet whenever data is added in column 
+create table <table name>		=>we do not have to insert value in id whenever any row is added it will auto 
+<id serial ><name text>				increment
+select age(timestamp 'date year and 	=>this will print date from past to now means subtract the date
+month you want to enter',timestamp
+'same');
+
+
+
+
+

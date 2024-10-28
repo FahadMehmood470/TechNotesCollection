@@ -1,0 +1,11 @@
+interview Question 
+Q1:The main difference is:
+
+    NPM: Installs packages.
+    NPX: Executes packages without installing.
+Q2:JavaScript: A dynamic scripting language used for building web 			applications.
+TypeScript: A statically-typed superset of JavaScript that adds optional types for better code structure and error checking.
+
+
+
+mkF/2m*Dk83phPp
